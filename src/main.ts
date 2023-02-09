@@ -26,6 +26,6 @@ async function bootstrap() {
   app.useStaticAssets(__dirname + '/../public', { prefix: 'public' });
   app.useStaticAssets(__dirname + '/../node_modules/bootstrap/dist');
   app.setViewEngine('njk');
-  await app.listen(3000);
+  await app.listen(8080);
 }
 bootstrap();
