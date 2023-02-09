@@ -17,7 +17,7 @@ COPY . .
 EXPOSE 8080
 
 # Especificar el comando por defecto para ejecutar al iniciar el contenedor
-CMD ["node", "dist/main"]
+CMD ["nest", "start"]
 
 
 
