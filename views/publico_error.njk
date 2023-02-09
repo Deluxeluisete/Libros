@@ -1,0 +1,16 @@
+{% extends "publico_base.njk" %}
+
+{% block titulo %}Juegos | Error{% endblock %}
+
+{% block contenido %}
+
+    <h1>Error</h1>
+    <div class="alert alert-danger">
+        {% if error %}
+            {{ error }}
+        {% else %}
+        {{error}}
+        {% endif %}
+    </div>
+
+{% endblock %}

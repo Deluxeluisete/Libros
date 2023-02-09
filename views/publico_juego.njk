@@ -1,0 +1,16 @@
+{% extends "publico_base.njk" %}
+{% block titulo %}Juego | Ficha{% endblock %}
+{% block contenido %}
+    <h1>Ficha de juego</h1>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <p class="card-title">Nombre{{ juego.nombre }}</p>
+            <p class="card-text">Descripcion: {{ juego.descripcion }}</p>
+            <p class="card-text">Precio: {{ juego.precio }}</p>
+            <h1>Ediciones de juego</h1>
+            <p class="card-text">edicion: {{ juego.Ediciones.edicion }}</p>
+            <p class="card-text">año: {{ juego.Ediciones.anyo }}</p>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+<ul class="nav text-bg-primary p-3">
+    <li class="nav-item">
+        <a class="nav-link text-bg-primary" aria-current="page" href="/">Inicio</a>
+    </li>
+        <li class="nav-item">
+        <a class="nav-link text-bg-primary" href="/auth/login">Administracion</a>
+    </li>
+    {% if (session and session.usuario) %}
+    <li class="nav-item">
+        <a class="nav-link text-bg-primary" href="/juegos">Ver juego</a>
+    </li>    
+    <li class="nav-item">
+        <a class="nav-link text-bg-primary" href="/juegos/nuevo">Crear juego</a>
+    </li>    
+    <li class="nav-item">
+        <a class="nav-link text-bg-primary" href="/auth/logout">Cerrar sesión: {{ session.usuario }}</a>
+    </li>
+    {% else %}
+
+    {% endif %}
+</ul>

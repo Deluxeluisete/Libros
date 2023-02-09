@@ -1,0 +1,33 @@
+{% extends "admin_base.njk" %}
+{% block titulo %}Juegos | Listado{% endblock %}
+{% block contenido %}
+    <div class="container">
+        <h1>Lista de juegos</h1>
+       
+            {% for juego in juegos %}
+                <div class="row m-1">
+                    <div class="col-6">{{ juego.nombre }}</div>
+                        <div class="col-auto">
+                            <form action="/juegos/borrar/{{ juego.id }}" method="post">
+                                <input type="hidden" name="_method" value="delete"/>
+                                <button type="submit" class="btn btn-danger">Borrar</button>
+                            </form>
+                        </div>
+                        <div class="col-auto">
+                            <a class="btn btn-primary" href="/juegos/editar/{{ juego.id }}">Editar</a>
+                        </div>
+                        <div class="col-auto">
+                            <a class="btn btn-primary" href="/juegos/editar/{{ juego.id }}">Ver ediciones</a>
+                        </div>
+                        <div class="col-auto">
+                            <a class="btn btn-primary" href="/ediciones/nueva/{{ juego.id }}">Añadir edicion</a>
+                        </div>
+        
+                </div>
+            {% else %}
+                <div class="row">
+                    <div class="col-12">No hay juegos que mostrar.</div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endblock %}

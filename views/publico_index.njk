@@ -1,0 +1,29 @@
+{% extends "publico_base.njk" %}
+
+{% block titulo %}Juegos | Listado{% endblock %}
+
+{% block contenido %}
+
+    <h1>Listado de juegos</h1>
+       <form class="row g-3" action="/buscar" method="post">
+            <div class="col-auto">
+                <label for="textoBusqueda" class="visually-hidden">textoBusqueda</label>
+                <input type="text" name="textoBusqueda" class="form-control col-12" id="textoBusqueda" placeholder="Buscador de juegos"></div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mt-3">Buscar</button>
+                </div>
+            </form>
+      {% for juego in juegos %}
+                <div class="row m-1">
+                    <div class="col-6">{{ juego.nombre }}</div>
+                    <div class="col-auto">
+                        <a class="btn btn-success" href="/juegos/{{ juego.id }}">Ver ficha</a>
+                    </div>   
+                </div>
+            {% else %}
+                <div class="row">
+                    <div class="col-12">No se encontraron juegos.</div>
+                </div>
+            {% endfor %}
+{% endblock %}
+
